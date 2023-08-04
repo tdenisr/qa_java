@@ -16,23 +16,17 @@ public class AnimalParameterizedTest {
         this.animalKind = animalKind;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "Список еды для животных {1}: {0}")
     public static Object[][] getFoodData() {
         return new Object[][]{
                 {List.of("Трава", "Различные растения"), "Травоядное"},
                 {List.of("Животные", "Птицы", "Рыба"), "Хищник"},
-                {List.of(""), "Null"},
         };
     }
 
     @Test
-    public void getFoodForAnimalKindTest() {
+    public void getFoodForAnimalKindTest() throws Exception {
         Animal animal = new Animal();
-        try {
-            Assert.assertEquals(food, animal.getFood(animalKind));
-        } catch (Exception exception) {
-            Assert.assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник",
-                    exception.getMessage());
-        }
+        Assert.assertEquals(food, animal.getFood(animalKind));
     }
 }

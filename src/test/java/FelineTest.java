@@ -21,7 +21,8 @@ public class FelineTest {
     @Test
     public void noParameterReturnOneKittensTest() {
         Feline feline = new Feline();
-        Assert.assertEquals(1, feline.getKittens());
+        int defaultKittensCount = 1;
+        Assert.assertEquals(defaultKittensCount, feline.getKittens());
     }
 
     @Test
