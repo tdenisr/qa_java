@@ -1,9 +1,8 @@
-package com.example;
+package ru.practicum;
 
 import java.util.List;
 
 public interface Predator {
 
     List<String> eatMeat() throws Exception;
-
 }
